@@ -1,0 +1,15 @@
+De acuerdo al planteamiento de las ecuaciones diferenciales, la ecuación para los infectados es:
+
+$$\frac{di}{dt}=i(\beta s-\gamma)$$
+
+Si la condición inicial de $s(0)=s_0$ es tal que $\beta s_0=\gamma$ entonces la derivada sería nula haciendo que la cantidad de infectados permanezca constante en el tiempo puesto que no habría suficiente población susceptible para que la infección se contagie.
+
+Por otro lado, si $s(0)$ está debajo de este valor crítico $s_0=\beta/\gamma$ entonces la ecuación diferencial tendría una forma:
+
+$$\frac{di}{dt}\propto -i$$
+
+con un factor de proporcionalidad que cambiaría con cada iteración, pero que siempre daría una pendiente negativa haciendo que la población infectada siempre exhiba una tasa decreciente.
+
+En conclusión, se tiene un valor crítico $s_c=\beta /\gamma$ tal que si $s(0)\leq s_0$ entonces el porcentaje de infectados permanecerá constante o decrecerá.
+
+Para el caso del ejercicio anterior donde se tenían los valores $\beta=0.35$ y $\gamma=0.08$ el valor crítico es $s_c\approx 0.2285$, es decir, casi un $23\%$ de ciudadanos susceptibles
