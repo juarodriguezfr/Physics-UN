@@ -1,0 +1,34 @@
+import sys
+import subprocess
+from IPython.display import clear_output
+
+# Check if Git is installed
+try:
+    result = subprocess.run(["git", "--version"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+except FileNotFoundError:
+    # Git is not installed
+    print("Git is not installed. Installing Git...")
+
+    # Install Git
+    install_result = subprocess.run(["pip", "install", "git"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+    if install_result.returncode == 0:
+        print("Git installed successfully.")
+    else:
+        print("Error installing Git.")
+        print("Installation output:")
+        print(install_result.stdout.decode("utf-8"))
+        print(install_result.stderr.decode("utf-8"))
+
+    # Clear the output
+    clear_output()
+
+# Check Git version
+try:
+    result = subprocess.run(["git", "--version"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    print("Git version:")
+    print(result.stdout.decode("utf-8"))
+except FileNotFoundError:
+    print("Git is still not found. Please install Git manually.")
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
